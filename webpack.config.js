@@ -12,17 +12,27 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      // title: '管理输出',
-      title: "Development",
+      title: 'Caching',
     }),
   ],
   output: {
-    // filename: 'main.js',
-    // filename: 'bundle.js',
-    filename: "[name].bundle.js",
+    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, "dist"),
     clean: true,
     publicPath: '/',
+  },
+  optimization: {
+    moduleIds: 'deterministic',
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
   },
   module: {
     rules: [

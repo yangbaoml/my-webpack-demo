@@ -1,11 +1,11 @@
-import printMe from "./print.js";
+// import Print from './print';
 
 async function getComponent() {
   const element = document.createElement("div");
   const { default: _ } = await import("lodash");
   const btn = document.createElement("button");
   btn.innerHTML = "Click me and check the console!";
-  btn.onclick = printMe;
+  // element.onclick = Print.bind(null, 'Hello webpack!');
   element.appendChild(btn);
   element.innerHTML = _.join(["Hello", "webpack"], " ");
   return element;;
