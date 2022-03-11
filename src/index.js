@@ -1,5 +1,7 @@
 // import Print from './print';
-
+if (process.env.NODE_ENV !== 'production') {
+  console.log('Looks like we are in development mode!');
+}
 async function getComponent() {
   const element = document.createElement("div");
   const { default: _ } = await import("lodash");
