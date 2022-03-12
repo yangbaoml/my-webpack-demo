@@ -1,0 +1,13 @@
+.dv{
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  background-color:paleturquoise;
+  position: relative;
+  .hello{
+    color: #000000;
+    position: absolute;
+    font-size: 34px;
+    transform: translate(-50%,-50%);
+  }
+}
